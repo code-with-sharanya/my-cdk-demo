@@ -17,7 +17,7 @@ export class PipelineStack extends cdk.Stack {
         super(scope, id, props);
         const pipeline = new pipelines.CodePipeline(this, 'Pipeline', {
             pipelineName: 'MyApiPipeline',
-            selfMutation: false,
+            selfMutation: true,
             synth: new pipelines.ShellStep('Synth', {
                 input: pipelines.CodePipelineSource.gitHub(
                     'code-with-sharanya/my-cdk-demo',
